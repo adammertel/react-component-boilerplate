@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { actions } from "@storybook/addon-actions";
-import { withState, Store, State } from "@sambego/storybook-state";
-import { addDecorator, addParameters } from "@storybook/react";
+import { Store, State } from "@sambego/storybook-state";
 import { uuid } from "../util";
 import App from "../app";
 
