@@ -1,13 +1,219 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Button Emoji 1`] = `
-<button>
+exports[`Storyshots App Longer 1`] = `
+<div
+  className="todo"
+  data-testid="todo"
+>
+  <div
+    className="add-new-task"
+  >
+    <input
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+    <button
+      onClick={[Function]}
+    >
+      Add
+    </button>
+  </div>
+  <div
+    className="tasks-list"
+  >
+    <div
+      className="task-line"
+    >
+      <span
+        className="task-label"
+      >
+         
+        wake up
+      </span>
+      <button
+        onClick={[Function]}
+      >
+        X
+      </button>
+    </div>
+    <div
+      className="task-line"
+    >
+      <span
+        className="task-label"
+      >
+         
+        boil water
+      </span>
+      <button
+        onClick={[Function]}
+      >
+        X
+      </button>
+    </div>
+    <div
+      className="task-line"
+    >
+      <span
+        className="task-label"
+      >
+         
+        prepare coffee
+      </span>
+      <button
+        onClick={[Function]}
+      >
+        X
+      </button>
+    </div>
+    <div
+      className="task-line"
+    >
+      <span
+        className="task-label"
+      >
+         
+        grab a piece of cake
+      </span>
+      <button
+        onClick={[Function]}
+      >
+        X
+      </button>
+    </div>
+    <div
+      className="task-line"
+    >
+      <span
+        className="task-label"
+      >
+         
+        eat cake
+      </span>
+      <button
+        onClick={[Function]}
+      >
+        X
+      </button>
+    </div>
+    <div
+      className="task-line"
+    >
+      <span
+        className="task-label"
+      >
+         
+        drink coffee
+      </span>
+      <button
+        onClick={[Function]}
+      >
+        X
+      </button>
+    </div>
+    <div
+      className="task-line"
+    >
+      <span
+        className="task-label"
+      >
+         
+        code
+      </span>
+      <button
+        onClick={[Function]}
+      >
+        X
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots App Short 1`] = `
+<div
+  className="todo"
+  data-testid="todo"
+>
+  <div
+    className="add-new-task"
+  >
+    <input
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+    <button
+      onClick={[Function]}
+    >
+      Add
+    </button>
+  </div>
+  <div
+    className="tasks-list"
+  >
+    <div
+      className="task-line"
+    >
+      <span
+        className="task-label"
+      >
+         
+        make coffee
+      </span>
+      <button
+        onClick={[Function]}
+      >
+        X
+      </button>
+    </div>
+    <div
+      className="task-line"
+    >
+      <span
+        className="task-label"
+      >
+         
+        dring coffee
+      </span>
+      <button
+        onClick={[Function]}
+      >
+        X
+      </button>
+    </div>
+    <div
+      className="task-line"
+    >
+      <span
+        className="task-label"
+      >
+         
+        make another coffee
+      </span>
+      <button
+        onClick={[Function]}
+      >
+        X
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots components - Button Emoji 1`] = `
+<button
+  onClick={[Function]}
+>
   😀 😎 👍 💯
 </button>
 `;
 
-exports[`Storyshots Button Text 1`] = `
-<button>
+exports[`Storyshots components - Button Text 1`] = `
+<button
+  onClick={[Function]}
+>
   Hello Button
 </button>
 `;

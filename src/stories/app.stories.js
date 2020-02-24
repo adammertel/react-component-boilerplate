@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { useState } from "react";
 import { actions } from "@storybook/addon-actions";
 import { withState, Store, State } from "@sambego/storybook-state";
 import { addDecorator, addParameters } from "@storybook/react";
@@ -9,10 +9,15 @@ const uuid = () =>
     .toString(36)
     .substring(2) + Date.now().toString(36);
 
-const tasksMockupValues = [
-  "make coffee",
-  "dring coffee",
-  "make another coffee"
+const shortMockup = ["make coffee", "dring coffee", "make another coffee"];
+const longMockup = [
+  "wake up",
+  "boil water",
+  "prepare coffee",
+  "grab a piece of cake",
+  "eat cake",
+  "drink coffee",
+  "code"
 ];
 
 const tasksMockup = values =>
@@ -21,13 +26,22 @@ const tasksMockup = values =>
     value
   }));
 
-const simpleStore = new Store({
-  tasks: tasksMockup(tasksMockupValues),
+const shortStore = new Store({
+  tasks: tasksMockup(shortMockup),
   handleRemoveTask: taskToRemoveId => {
-    taskRemove(taskToRemoveId, simpleStore);
+    taskRemove(taskToRemoveId, shortStore);
   },
   handleAddTask: newTaskValue => {
-    taskAdd(newTaskValue, simpleStore);
+    taskAdd(newTaskValue, shortStore);
+  }
+});
+const longStore = new Store({
+  tasks: tasksMockup(longMockup),
+  handleRemoveTask: taskToRemoveId => {
+    taskRemove(taskToRemoveId, longStore);
+  },
+  handleAddTask: newTaskValue => {
+    taskAdd(newTaskValue, longStore);
   }
 });
 
@@ -51,19 +65,17 @@ const taskRemove = (taskToRemoveId, store) => {
   console.log(store.get("tasks"));
 };
 
-addDecorator(withState());
-addParameters({
-  state: {
-    simpleStore
-  }
-});
-
 export default {
   title: "App"
 };
 
-export const Simple = () => (
-  <State store={simpleStore}>
+export const Short = () => (
+  <State store={shortStore}>
+    <App />
+  </State>
+);
+export const Longer = () => (
+  <State store={longStore}>
     <App />
   </State>
 );

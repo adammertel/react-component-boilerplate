@@ -17,7 +17,7 @@ const App: FunctionComponent<Props> = props => {
   const [newTask, setNewTask] = useState("");
 
   return (
-    <div className="app">
+    <div className="todo" data-testid="todo">
       <div className="add-new-task">
         <Input
           value={newTask}
