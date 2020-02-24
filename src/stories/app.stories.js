@@ -2,12 +2,8 @@ import React, { useState } from "react";
 import { actions } from "@storybook/addon-actions";
 import { withState, Store, State } from "@sambego/storybook-state";
 import { addDecorator, addParameters } from "@storybook/react";
+import { uuid } from "../util";
 import App from "../app";
-
-const uuid = () =>
-  Math.random()
-    .toString(36)
-    .substring(2) + Date.now().toString(36);
 
 const shortMockup = ["make coffee", "dring coffee", "make another coffee"];
 const longMockup = [
