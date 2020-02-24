@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Button Emoji 1`] = `
+<button>
+  😀 😎 👍 💯
+</button>
+`;
+
+exports[`Storyshots Button Text 1`] = `
+<button>
+  Hello Button
+</button>
+`;
