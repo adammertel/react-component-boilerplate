@@ -1,48 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, FunctionComponent } from "react";
 
 import Button from "./button";
 import Input from "./input";
 
 type Task = { id: string; value: string };
+type Props = {
+  tasks: Task[];
+  handleAddTask: Function;
+  handleRemoveTask: Function;
+};
 
-const uuid = (): string =>
-  Math.random()
-    .toString(36)
-    .substring(2) + Date.now().toString(36);
-
-const tasksMockupValues = [
-  "make coffee",
-  "dring coffee",
-  "make another coffee"
-];
-
-const tasksMockup = tasksMockupValues.map(value => ({
-  id: uuid(),
-  value
-}));
-
-const App = () => {
+const App: FunctionComponent<Props> = props => {
   /**
    * name of new task
    */
   const [newTask, setNewTask] = useState("");
-
-  /**
-   * handling the list of stored tasks
-   */
-  const [tasks, setTasks] = useState<Task[]>(tasksMockup);
-  const taskAdd = (newTaskValue: string) => {
-    if (newTaskValue !== "") {
-      const newTask = {
-        id: uuid(),
-        value: newTaskValue
-      };
-      setTasks([...tasks, newTask]);
-    }
-  };
-  const taskRemove = (taskToRemoveId: string) => {
-    setTasks([...tasks.filter(task => task.id !== taskToRemoveId)]);
-  };
 
   return (
     <div className="app">
@@ -53,14 +25,17 @@ const App = () => {
             setNewTask(newValue);
           }}
         />
-        <Button label="Add" handleClick={() => taskAdd(newTask)} />
+        <Button label="Add" handleClick={() => props.handleAddTask(newTask)} />
       </div>
       <div className="tasks-list">
-        {tasks.map(task => {
+        {props.tasks.map(task => {
           return (
-            <div className="task-line">
+            <div className="task-line" key={task.id}>
               <span className="task-label"> {task.value}</span>
-              <Button label="x" handleClick={() => taskRemove(task.id)} />
+              <Button
+                label="x"
+                handleClick={() => props.handleRemoveTask(task.id)}
+              />
             </div>
           );
         })}
