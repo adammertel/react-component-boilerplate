@@ -9,3 +9,10 @@
 - storybook
 - jest
 - sass
+
+## Scripts
+
+- `npm run install` installs dependencies
+- `npm test -a` runs all tests and `npm run test-update` also updates snapshots
+- `npm run storybook` runs storybook server and opens web tab
+- `npm run build` creates build folder
